@@ -155,7 +155,7 @@ The [smallTestData](https://github.com/Raymond-JRLin/Improved-PageRank-with-Beta
 
 The [bigTestData](https://github.com/Raymond-JRLin/Improved-PageRank-with-Beta-Parameter/tree/master/bigTestData) concludes 6012 webpages, source comes from this [page](https://www.limfinity.com/ir/).
 
-Each test data contains 2 files: pr.txt, which is >PRO, and transition.txt, which is >transition matrix.
+Each test data contains 2 files: pr.txt, which is ```PRO```, and transition.txt, which is ```transition matrix```.
 
 ## Prerequisite
 
@@ -217,7 +217,7 @@ If it shows
 
 ### 6. Run PageRank
 
-*Attention: I have small and big test data, before you run, copy data files you want to test into ```src/main/java```, and use corresponding file names.*
+*Attention: I have small and big test data, and in small test data, I provide 2 PR0 with 1/4 and 1. Before you run, you should copy data files you want to test into ```src/main/java```, and use corresponding file names.*
 
 ```
 cd src/main/java/ # enter project source code
@@ -244,14 +244,28 @@ Use following order to check results:
 ```
 hdfs dfs -cat /pagerank1/* # this is for test of args3=1
 ```
-Then you can use big data to test.
+
+For example, if you ran small test data with ```PR0 == 1``` and ```N == 1```, then you should see following results:
+
+> a      1.5
+
+> b      0.8333
+
+> c      0.8333
+
+> d      0.8333
+
+Then you can use iteration of 30 - 40 times to see convergent result and big data to test.
 
 ### 8. Download results if you want
 ```
 hdfs dfs -get <src> <localDest> # src: the addresss of original file you want download, localDest: name of download file you wanna give
 ```
 
-
+For example, if you ran small test data with ```N == 30```, and name your local file as ```pr30.txt```, then you can run like:
+```
+hdfs dfs -get /pagerank30/part-r-00000 pr30.txt
+```
 
 ## Reference
 1. [The PageRank Citation Ranking: Bringing Order to the Web](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf)
