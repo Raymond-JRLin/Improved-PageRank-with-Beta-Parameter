@@ -135,7 +135,7 @@ to:
 PRN = (1 - β) * Transition Matrix * PR(N-1) + β * PR(N-1)
 ```
 
-We can see first part of above new formula (`(1 - β) * Transition Matrix * PR(N-1)`) is original formula with modification, the second part (`β * PR(N-1)`) is what we added, which means we hold some weight in last iteration to module the close-reopen operation.
+We can see first part of above new formula `(1 - β) * Transition Matrix * PR(N-1)` is original formula with modification, the second part `β * PR(N-1)` is what we added, which means we hold some weight in last iteration to module the close-reopen operation.
 
 We usually set β as 0.15 - 0.20, that's a experience value.
 
@@ -155,7 +155,7 @@ The [smallTestData](https://github.com/Raymond-JRLin/Improved-PageRank-with-Beta
 
 The [bigTestData](https://github.com/Raymond-JRLin/Improved-PageRank-with-Beta-Parameter/tree/master/bigTestData) concludes 6012 webpages, source comes from this [page](https://www.limfinity.com/ir/).
 
-Each test data contains 2 files: pr.txt, which is PRO, and transition.txt, which is transition matrix.
+Each test data contains 2 files: pr.txt, which is >PRO, and transition.txt, which is >transition matrix.
 
 ## Prerequisite
 
